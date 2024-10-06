@@ -9,16 +9,25 @@ body, html {
     background-color: #f0f0f0;
 }
 
-/* Estilo del texto "Próximamente" */
+/* Estilo del texto "Próximamente" para adaptarse a cualquier dispositivo */
 .proximamente {
-    font-size: 48px;
+    font-size: 10vw; /* El tamaño de la fuente es relativo al ancho del viewport */
     font-weight: bold;
     color: #333;
     animation: parpadeo 1.5s infinite;
+    text-align: center; /* Asegura que el texto esté centrado si se ajusta en varias líneas */
+    padding: 0 2vw; /* Añadimos un poco de padding para evitar que el texto toque los bordes en pantallas pequeñas */
 }
 
 /* Definición de la animación de parpadeo */
 @keyframes parpadeo {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
+}
+
+/* Ajustes para pantallas muy grandes */
+@media (min-width: 1200px) {
+    .proximamente {
+        font-size: 5em; /* Fijamos un tamaño máximo para pantallas muy grandes */
+    }
 }
